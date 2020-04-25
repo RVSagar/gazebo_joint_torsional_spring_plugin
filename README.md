@@ -6,9 +6,9 @@ This Gazebo/ROS plugin allows you to easily add a torsional spring to your robot
 
 ```shell
 cd ~/catkin_ws/src
-git clone git@github.com:aminsung/gazebo_joint_torsional_spring_plugin.git
+git clone https://github.com/makit0sh/gazebo_joint_torsional_spring_plugin.git
 cd ~/catkin_ws
-catkin_make
+catkin build
 ```
 
 ### Adding the joint torsional spring plugin
@@ -20,16 +20,16 @@ This plugin attaches to a joint, so the plugin needs to be given a reference to 
   <joint name="knee_joint">
     ... joint description ...
   </joint>
-    
+
   <gazebo>
     <!-- joint torsional spring plugin -->
-    <plugin name="knee_joint_torsional_spring" filename="libgazebo_joint_torsional_spring.so">
+    <plugin name="knee_joint_torsional_spring" filename="libjoint_torsional_spring_plugin.so">
       <kx>0.1</kx>
       <set_point>0.5</set_point>
       <joint>knee_joint</joint>
     </plugin>
   </gazebo>
-    
+
 </robot>
 ```
 
