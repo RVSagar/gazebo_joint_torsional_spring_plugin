@@ -68,8 +68,8 @@ namespace gazebo
 
     protected: void OnUpdate()
       {
-        double current_angle = this->joint->Position();
-        this->joint->SetForce(0, this->kx*(this->setPoint-current_angle));			
+        double current_angle = this->joint->GetAngle(0).Radian();	
+        this->joint->SetForce(0, this->kx*(this->setPoint-current_angle));				
         //gzdbg << "Applying force:" << this->kx*(this->setPoint-current_angle) << std::endl;
       }
 
